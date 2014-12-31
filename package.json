@@ -1,0 +1,24 @@
+{
+  "name": "ahimta-nodeschool",
+  "version": "0.0.11",
+  "description": "My solutions for Nodeschool workshoppers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ahimta/nodeschool.git"
+  },
+  "author": "Abdullah Alansari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ahimta/nodeschool/issues"
+  },
+  "homepage": "https://github.com/Ahimta/nodeschool",
+  "dependencies": {
+    "concat-stream": "^1.4.7",
+    "moment": "^2.8.4",
+    "through2-map": "^1.4.0"
+  }
+}
