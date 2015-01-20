@@ -1,13 +1,15 @@
 module.exports = function (fn, argsLength) {
 
-  const arity
-  if (argsLength) { arity = argsLength }
-  else            { arity = fn.length }
+  if (typeof argsLength !== 'number') { argsLength = fn.length }
 
-  const args = Array.prototype.slice.call(arguments, 0, (arity + 1))
-  const curried = args.reduce(
-    function (acc, __) {
-      return function(arg) {}
+  function helper(prevArgs) {
+    return function (currentArg) {
+      const currentArgs = prevArgs.concat(currentArg)
+
+      if (currentArgs.length < argsLength) { return helper(currentArgs) }
+      else { return fn.apply(fn, currentArgs) }
     }
-  )
+  }
+
+  return helper([])
 }
